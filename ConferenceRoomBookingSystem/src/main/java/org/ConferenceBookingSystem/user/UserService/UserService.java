@@ -1,12 +1,10 @@
 package org.ConferenceBookingSystem.user.UserService;
 
-import org.ConferenceBookingSystem.user.UserModel.User;
-
 public interface UserService {
 
-    void createUser(User user);
+    void createUser(String userName, String password);
 
-    void updateUser(User user);
+    void updateUser(String userName, String password);
 
-    void deleteuser(User user);
+    void deleteuser(int id);
 }

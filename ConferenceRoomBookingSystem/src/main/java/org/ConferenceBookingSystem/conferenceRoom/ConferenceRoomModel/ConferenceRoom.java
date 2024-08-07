@@ -10,15 +10,12 @@ public class ConferenceRoom {
 
     int capacity; //max members that can be accommodated
 
-    TimeSlot slot;
+    TimeSlot bookedSlot; //if the room is booked already
 
-    TimeSlot bookedSlot;
-
-    public ConferenceRoom(int id, String name, int capacity, TimeSlot slot, TimeSlot bookedSlot) {
+    public ConferenceRoom(int id, String name, int capacity, TimeSlot bookedSlot) {
         this.id = id;
         this.name = name;
         this.capacity = capacity;
-        this.slot = slot;
         this.bookedSlot = bookedSlot;
     }
 }

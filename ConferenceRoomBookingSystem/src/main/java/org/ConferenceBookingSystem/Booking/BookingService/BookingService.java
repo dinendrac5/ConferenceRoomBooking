@@ -8,6 +8,7 @@ import org.ConferenceBookingSystem.conferenceRoom.ConferenceRoomModel.Conference
 import java.util.Optional;
 
 public interface BookingService {
+    
     ConferenceRoom createNewBooking(Optional<Building> building, Optional<Floor> floor, TimeSlot slot, Optional<ConferenceRoom> conferenceRoom, int capacity);
 
     ConferenceRoom updateBooking(Optional<Building> building, Optional<Floor> floor, TimeSlot slot, Optional<ConferenceRoom> conferenceRoom, int capacity);

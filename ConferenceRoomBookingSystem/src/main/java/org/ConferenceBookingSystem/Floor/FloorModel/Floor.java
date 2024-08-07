@@ -2,17 +2,15 @@ package org.ConferenceBookingSystem.Floor.FloorModel;
 
 import org.ConferenceBookingSystem.conferenceRoom.ConferenceRoomModel.ConferenceRoom;
 
-import java.util.List;
-
 public class Floor {
 
     int floorId; //floor number
 
-    List<ConferenceRoom> conferenceRooms; // all the conference rooms in the floor
+    ConferenceRoom conferenceRoom; // all the conference rooms in the floor
 
-    public Floor(int floorId, List<ConferenceRoom> conferenceRooms) {
+    public Floor(int floorId, ConferenceRoom conferenceRoom) {
         this.floorId = floorId;
-        this.conferenceRooms = conferenceRooms;
+        this.conferenceRoom = conferenceRoom;
     }
 
 }

@@ -14,14 +14,5 @@ public class UserRepository implements IUserRepository {
     public List<User> findAll() {
         return List.of();
     }
-
-    @Override
-    public void addUser(User user) {
-
-    }
-
-    @Override
-    public void removeUser(User user) {
-
-    }
+    
 }

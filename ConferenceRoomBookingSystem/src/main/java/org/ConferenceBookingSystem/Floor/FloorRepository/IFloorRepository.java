@@ -4,10 +4,7 @@ import org.ConferenceBookingSystem.conferenceRoom.ConferenceRoomModel.Conference
 
 import java.util.List;
 
-public class FloorRepository implements IFloorRepository {
+public interface IFloorRepository {
 
-    @Override
-    public List<ConferenceRoom> findById(int id) {
-        return List.of();
-    }
+    List<ConferenceRoom> findById(int id);
 }
