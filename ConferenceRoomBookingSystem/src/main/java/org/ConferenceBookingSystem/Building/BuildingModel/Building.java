@@ -1,24 +1,49 @@
 package org.ConferenceBookingSystem.Building.BuildingModel;
 
-import org.ConferenceBookingSystem.Floor.FloorModel.Floor;
 import org.ConferenceBookingSystem.conferenceRoom.ConferenceRoomModel.ConferenceRoom;
 
 import java.util.List;
 
 public class Building {
 
-    int buildingId;
+    private int buildingId;
 
-    String buildingName;
+    private String buildingName;
 
-    List<Floor> floors;
+    private String buildingAddress;
 
-    List<ConferenceRoom> confRooms;
+    public Building() {
 
-    public Building(int buildingId, String buildingName, List<Floor> floors, List<ConferenceRoom> confRooms) {
+    }
+
+    public int getBuildingId() {
+        return buildingId;
+    }
+
+    public void setBuildingId(int buildingId) {
+        this.buildingId = buildingId;
+    }
+
+    public String getBuildingName() {
+        return buildingName;
+    }
+
+    public void setBuildingName(String buildingName) {
+        this.buildingName = buildingName;
+    }
+
+    public String getBuildingAddress() {
+        return buildingAddress;
+    }
+
+    public void setBuildingAddress(String buildingAddress) {
+        this.buildingAddress = buildingAddress;
+    }
+
+
+    public Building(int buildingId, String buildingName, List<ConferenceRoom> confRooms, String buildingAddress) {
         this.buildingId = buildingId;
         this.buildingName = buildingName;
-        this.floors = floors;
-        this.confRooms = confRooms;
+        this.buildingAddress = buildingAddress;
     }
 }

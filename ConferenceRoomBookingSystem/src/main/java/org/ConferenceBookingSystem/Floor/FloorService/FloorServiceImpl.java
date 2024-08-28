@@ -1,22 +1,43 @@
 package org.ConferenceBookingSystem.Floor.FloorService;
 
-import org.ConferenceBookingSystem.conferenceRoom.ConferenceRoomModel.ConferenceRoom;
-
-import java.util.List;
+import org.ConferenceBookingSystem.Exceptions.UserExceptions.EntityNotFound;
+import org.ConferenceBookingSystem.Floor.FloorModel.Floor;
+import org.ConferenceBookingSystem.Floor.FloorRepository.FloorRepository;
 
 public class FloorServiceImpl implements FloorService {
-    @Override
-    public void addFloor(int floorId, List<ConferenceRoom> confRooms) {
+    private final FloorRepository floorRepository;
 
+    public FloorServiceImpl(FloorRepository floorRepository) {
+        this.floorRepository = floorRepository;
     }
 
     @Override
-    public void updateFloor(int floorId, List<ConferenceRoom> confRooms) {
-
+    public Floor addFloor(Floor floor) {
+        Floor savedFloor = floorRepository.findByFloorIdAndBuildingId(floor.getFloorId(), floor.getBuilding().getBuildingId());
+        if (savedFloor != null) {
+            throw new UnsupportedOperationException("floor already exists");
+        }
+        Floor newFloor = new Floor();
+        newFloor.setFloorId(floor.getFloorId());
+        newFloor.setFloorName(floor.getFloorName());
+        newFloor.setBuilding(floor.getBuilding());
+        floorRepository.addFloor(newFloor);
+        return newFloor;
     }
 
     @Override
-    public void removeFloor(int floorId) {
+    public Floor updateFloor(Floor floor) throws EntityNotFound {
+        Floor savedFloor = floorRepository.findByFloorIdAndBuildingId(floor.getFloorId(), floor.getBuilding().getBuildingId());
+        if (savedFloor == null) {
+            throw new EntityNotFound("Floor not found");
+        }
+        floorRepository.updateFloor(floor);
+        return null;
+    }
 
+    @Override
+    public String removeFloor(int floorId) {
+        floorRepository.removeFloor(floorId);
+        return "";
     }
 }

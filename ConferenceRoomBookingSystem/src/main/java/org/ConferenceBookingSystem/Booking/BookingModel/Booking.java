@@ -20,5 +20,62 @@ public class Booking {
 
     TimeSlot slot;
 
+    BookingStatus bookingStatus;
 
+
+    public int getBookingId() {
+        return bookingId;
+    }
+
+    public void setBookingId(int bookingId) {
+        this.bookingId = bookingId;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Building getBuilding() {
+        return building;
+    }
+
+    public void setBuilding(Building building) {
+        this.building = building;
+    }
+
+    public Floor getFloor() {
+        return floor;
+    }
+
+    public void setFloor(Floor floor) {
+        this.floor = floor;
+    }
+
+    public ConferenceRoom getConfRoom() {
+        return confRoom;
+    }
+
+    public void setConfRoom(ConferenceRoom confRoom) {
+        this.confRoom = confRoom;
+    }
+
+    public TimeSlot getSlot() {
+        return slot;
+    }
+
+    public void setSlot(TimeSlot slot) {
+        this.slot = slot;
+    }
+
+    public BookingStatus getBookingStatus() {
+        return bookingStatus;
+    }
+
+    public void setBookingStatus(BookingStatus bookingStatus) {
+        this.bookingStatus = bookingStatus;
+    }
 }

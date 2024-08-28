@@ -1,16 +1,48 @@
 package org.ConferenceBookingSystem.Floor.FloorModel;
 
-import org.ConferenceBookingSystem.conferenceRoom.ConferenceRoomModel.ConferenceRoom;
+import org.ConferenceBookingSystem.Building.BuildingModel.Building;
 
 public class Floor {
 
-    int floorId; //floor number
+    private int floorId; //floor number
 
-    ConferenceRoom conferenceRoom; // all the conference rooms in the floor
+    private String floorName;
 
-    public Floor(int floorId, ConferenceRoom conferenceRoom) {
-        this.floorId = floorId;
-        this.conferenceRoom = conferenceRoom;
+    private Building building;
+
+    public Floor() {
+
     }
+
+    public Floor(int floorId, String floorName, Building building) {
+        this.floorId = floorId;
+        this.floorName = floorName;
+        this.building = building;
+    }
+
+    public int getFloorId() {
+        return floorId;
+    }
+
+    public void setFloorId(int floorId) {
+        this.floorId = floorId;
+    }
+
+    public String getFloorName() {
+        return floorName;
+    }
+
+    public void setFloorName(String floorName) {
+        this.floorName = floorName;
+    }
+
+    public Building getBuilding() {
+        return building;
+    }
+
+    public void setBuilding(Building building) {
+        this.building = building;
+    }
+
 
 }

@@ -1,13 +1,12 @@
 package org.ConferenceBookingSystem.Floor.FloorService;
 
-import org.ConferenceBookingSystem.conferenceRoom.ConferenceRoomModel.ConferenceRoom;
-
-import java.util.List;
+import org.ConferenceBookingSystem.Exceptions.UserExceptions.EntityNotFound;
+import org.ConferenceBookingSystem.Floor.FloorModel.Floor;
 
 public interface FloorService {
-    void addFloor(int floorId, List<ConferenceRoom> confRooms);
+    Floor addFloor(Floor floor);
 
-    void updateFloor(int floorId, List<ConferenceRoom> confRooms);
+    Floor updateFloor(Floor floor) throws EntityNotFound;
 
-    void removeFloor(int floorId);
+    String removeFloor(int floorId);
 }

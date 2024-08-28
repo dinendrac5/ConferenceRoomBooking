@@ -1,10 +1,13 @@
 package org.ConferenceBookingSystem.user.UserService;
 
+import org.ConferenceBookingSystem.Exceptions.UserExceptions.UserNotFoundException;
+import org.ConferenceBookingSystem.user.UserModel.User;
+
 public interface UserService {
 
-    void createUser(String userName, String password);
+    public User createUser(User user) throws UserNotFoundException;
 
-    void updateUser(String userName, String password);
+    public User updateUser(User user) throws UserNotFoundException;
 
-    void deleteuser(int id);
+    public String deleteuser(int id);
 }

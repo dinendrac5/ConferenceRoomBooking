@@ -1,12 +1,12 @@
 package org.ConferenceBookingSystem.Building.BuildingService;
 
-import org.ConferenceBookingSystem.Floor.FloorModel.Floor;
-import org.ConferenceBookingSystem.conferenceRoom.ConferenceRoomModel.ConferenceRoom;
-
-import java.util.List;
+import org.ConferenceBookingSystem.Building.BuildingModel.Building;
+import org.ConferenceBookingSystem.Exceptions.UserExceptions.EntityNotFound;
 
 public interface BuildingService {
-    void addBuilding(String buildingName, List<Floor> floorList, List<ConferenceRoom> confRooms);
+    Building addBuilding(Building building);
 
-    void removeBuilding(String buildingName);
+    Building updateBuilding(Building building) throws EntityNotFound;
+
+    String removeBuilding(Building building);
 }

@@ -1,10 +1,16 @@
 package org.ConferenceBookingSystem.Building.BuildingRepository;
 
-import org.ConferenceBookingSystem.conferenceRoom.ConferenceRoomModel.ConferenceRoom;
-
-import java.util.List;
+import org.ConferenceBookingSystem.Building.BuildingModel.Building;
 
 public interface IBuildingRepository {
-    List<ConferenceRoom> findById(int id);//id refers to building id
+    Building findById(int id);//id refers to building id
 
+    //search, add, remove.
+
+    //add floor and conference rooms repo methods under building repo
+    void addBuilding(Building building);
+
+    void removeBuilding(int id);
+
+    void updateBuilding(Building building);
 }

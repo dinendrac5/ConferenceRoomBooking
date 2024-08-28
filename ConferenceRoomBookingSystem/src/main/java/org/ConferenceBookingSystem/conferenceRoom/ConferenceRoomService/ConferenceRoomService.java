@@ -1,12 +1,14 @@
 package org.ConferenceBookingSystem.conferenceRoom.ConferenceRoomService;
 
-import org.ConferenceBookingSystem.TimeSlot.TimeSlot;
+import org.ConferenceBookingSystem.Exceptions.UserExceptions.EntityNotFound;
+import org.ConferenceBookingSystem.Exceptions.UserExceptions.NotFoundCID;
+import org.ConferenceBookingSystem.conferenceRoom.ConferenceRoomModel.ConferenceRoom;
 
 public interface ConferenceRoomService {
 
-    void addRoom(String name, TimeSlot slot, int capacity);
+    ConferenceRoom addRoom(ConferenceRoom conferenceRoom) throws NotFoundCID;
 
-    void updateRoom(String name, TimeSlot slot, int capacity);
+    ConferenceRoom updateRoom(ConferenceRoom conferenceRoom) throws EntityNotFound, NotFoundCID;
 
-    void removeRoom(String name);
+    void removeRoom(int id);
 }

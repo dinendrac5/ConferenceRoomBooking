@@ -1,10 +1,20 @@
 package org.ConferenceBookingSystem.Floor.FloorRepository;
 
-import org.ConferenceBookingSystem.conferenceRoom.ConferenceRoomModel.ConferenceRoom;
+import org.ConferenceBookingSystem.Floor.FloorModel.Floor;
 
 import java.util.List;
 
 public interface IFloorRepository {
 
-    List<ConferenceRoom> findById(int id);
+    Floor findByFloorIdAndBuildingId(int floorId, int buildingId);
+
+    List<Floor> getAllFloors();
+
+    void addFloor(Floor floor);
+
+    void updateFloor(Floor floor);
+
+    void removeFloor(int id);
+
+
 }

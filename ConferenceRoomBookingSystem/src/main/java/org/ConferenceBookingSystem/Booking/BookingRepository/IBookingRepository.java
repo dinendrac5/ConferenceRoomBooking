@@ -1,15 +1,20 @@
 package org.ConferenceBookingSystem.Booking.BookingRepository;
 
+import org.ConferenceBookingSystem.Booking.BookingModel.Booking;
 import org.ConferenceBookingSystem.TimeSlot.TimeSlot;
 import org.ConferenceBookingSystem.conferenceRoom.ConferenceRoomModel.ConferenceRoom;
-import org.ConferenceBookingSystem.user.UserModel.User;
-
-import java.util.List;
 
 public interface IBookingRepository {
 
-    ConferenceRoom findBookingByUser(User user);
+    Booking findById(int id);
 
-    List<ConferenceRoom> findAllBookingsByBookedSlot(List<TimeSlot> bookedSlot);
+    Booking findBySlot(TimeSlot slot);
 
+    Booking findByConfRoom(ConferenceRoom conferenceRoom);
+
+    void createBooking(Booking booking);
+
+    void updateBooking(Booking booking);
+
+    void deleteBooking(int id);
 }

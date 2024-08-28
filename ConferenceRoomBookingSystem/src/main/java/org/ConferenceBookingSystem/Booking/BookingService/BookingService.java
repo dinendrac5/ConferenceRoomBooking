@@ -1,17 +1,14 @@
 package org.ConferenceBookingSystem.Booking.BookingService;
 
-import org.ConferenceBookingSystem.Building.BuildingModel.Building;
-import org.ConferenceBookingSystem.Floor.FloorModel.Floor;
-import org.ConferenceBookingSystem.TimeSlot.TimeSlot;
-import org.ConferenceBookingSystem.conferenceRoom.ConferenceRoomModel.ConferenceRoom;
-
-import java.util.Optional;
+import org.ConferenceBookingSystem.Booking.BookingModel.Booking;
+import org.ConferenceBookingSystem.Exceptions.UserExceptions.EntityNotFound;
+import org.ConferenceBookingSystem.Exceptions.UserExceptions.UserException;
 
 public interface BookingService {
-    
-    ConferenceRoom createNewBooking(Optional<Building> building, Optional<Floor> floor, TimeSlot slot, Optional<ConferenceRoom> conferenceRoom, int capacity);
 
-    ConferenceRoom updateBooking(Optional<Building> building, Optional<Floor> floor, TimeSlot slot, Optional<ConferenceRoom> conferenceRoom, int capacity);
+    Booking createNewBooking(Booking booking) throws UserException, EntityNotFound;
 
-    void deleteBooking(int id);
+    Booking updateBooking(Booking booking) throws UserException, EntityNotFound;
+
+    void deleteBooking(int id) throws EntityNotFound;
 }
